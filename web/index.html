@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <!-- <link id="hide" rel="stylesheet" href="hide.css"> -->
+</head>
+
+<body>
+  <div class="grid-container">
+    <div class="section1">
+      <div class="">
+        <p class="fit" id="company" contenteditable="true">company</p>
+      </div>
+    </div>
+    <div class="section2">
+      <div class="">
+        <div class="product">
+        <p class="fit" id="product" contenteditable="true">product</p>
+      </div>
+        <i>Product of Canada</i>
+        <div class="code">
+        <p class="fit" id="code" contenteditable="true">000</p>
+      </div>
+        <p id="color" contenteditable="true">color</p>
+        <p class="tag" id="tag1" contenteditable="true">tag1</p>
+        <p class="tag" id="tag2" contenteditable="true">tag2</p>
+        <p class="tag" id="tag3" contenteditable="true">tag3</p>
+        <p class="tag" id="tag4" contenteditable="true">tag4</p>
+        <p class="tag" id="tag5" contenteditable="true">tag5</p>
+      </div>
+    </div>
+    <div class="section3">
+      <div class="">
+        <p>Westland Greenhouses GB Inc.</p>
+        <p>Grand Bend N0M1T0</p>
+        <p>10133 Lakeshore Road</p>
+        <p>(519) 238-1321</p>
+      </div>
+    </div>
+    <script src="fitty.min.js"></script>
+    <script>
+      fitty('#product', {
+        maxSize: 60,
+      });
+      fitty('#code', {
+        maxSize: 280
+      });
+      // fitty('#company', {
+      //   maxSize: 80
+      // });
+    </script>
+</body>
+
+</html>
