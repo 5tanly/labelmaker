@@ -14,6 +14,9 @@ from pathlib import Path
 import modules.foliera
 import modules.trillium
 
+#Enable colors on Windows systems
+os.system('color')
+
 class bcolors:
     HEADER = '\033[95m'
     OKBLUE = '\033[94m'
@@ -90,6 +93,7 @@ def take_screenshot(image, count):
     png.paste(pnga, mask=pnga.split()[3])
     for c in range(0, int(count)):
         pnglist.append(png)
+
 print("foliera - f")    
 print("trillium - t")     
 company = input("^use the options above\nEnter company:\n")
