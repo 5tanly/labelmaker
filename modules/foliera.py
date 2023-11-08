@@ -101,6 +101,4 @@ def parse(filename):
     return(dict)
 
 if __name__ == "__main__":
-   print(parse("PurchaseOrder-WESGRE-01-Dec-22.pdf"))
-    # print(parse("PurchaseOrder-WESGRE-02-Feb-23.pdf"))
-    # print(parse("PurchaseOrder-WESGRE-12-Dec-22-IKEA.pdf"))
+   pass
