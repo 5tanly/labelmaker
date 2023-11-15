@@ -94,9 +94,6 @@ def take_screenshot(image, count):
     for c in range(0, int(count)):
         pnglist.append(png)
 
-print("foliera - f")    
-print("trillium - t")     
-company = input("^use the options above\nEnter company:\n")
 filepath = input("Drag the label file into this window and press enter:\n")
 filepath = filepath.strip("'")
 pnglist = []
@@ -117,12 +114,9 @@ driver.get(f'file:///{current_dir}/web/index.html')
 
 labelError = False
 
-if company == "f":
-    renderer = modules.foliera.parse(filepath)
-if company == "t":
-    renderer = modules.trillium.parse(filepath)
-    
-for label in renderer:
+import modules.renderer
+
+for label in modules.renderer.renderer(filepath):
     print(f"rendering label: {label}")
     try:
         render_label(company=label.get('company', ''),
