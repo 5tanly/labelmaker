@@ -12,7 +12,8 @@ def parse(filename):
         temp = extracted_text.split("Sent To:")[0]
         # print(temp)
         # a = re.split("[0-9][0-9][0-9][0-9][0-9][0-9]", temp)
-        a = re.split("(?<!\d)\d{6}(?!\d)", temp)
+        # print(repr(temp))
+        a = re.split("(?<!\d)\d{6}(?!\d)|Z\d{5}", temp)
         # print(a)
         # a = re.split(r"\D(\d{6})\D", " "+temp+" ")
         # print(a)
@@ -53,8 +54,8 @@ def parse(filename):
             if "w/Mylar" in d[0]:
                 e["pot_cover"] = True
 
-            # If the column contains a * then get quantity from the next column over
-            if "*"in d[len(d)-2]:
+            # If the column contains a '*' or a 'z' then get quantity from the next column over
+            if "*" in d[len(d)-2] or "z" in d[len(d)-2]:
                 e["quantity"] = d[len(d)-3]
             else:
                 e["quantity"] = d[len(d)-2]
@@ -101,4 +102,6 @@ def parse(filename):
     return(dict)
 
 if __name__ == "__main__":
-   pass
+   print(parse("PurchaseOrder-WESGRE-01-Dec-22.pdf"))
+    # print(parse("PurchaseOrder-WESGRE-02-Feb-23.pdf"))
+    # print(parse("PurchaseOrder-WESGRE-12-Dec-22-IKEA.pdf"))
